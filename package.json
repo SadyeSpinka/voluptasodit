@@ -1,0 +1,66 @@
+{
+  "name": "voluptasodit",
+  "version": "1.0.0",
+  "description": "a uid generator written in TypeScript.",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "clean": "node tools/build clean",
+    "build": "npm run clean && tsc -p .",
+    "test": "npm run build && nyc ava",
+    "bump": "standard-version",
+    "release": "git push --follow-tags origin master"
+  },
+  "engines": {
+    "node": ">=6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SadyeSpinka/voluptasodit.git"
+  },
+  "keywords": [
+    "officiis",
+    "quam"
+  ],
+  "author": "MerlinMayer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SadyeSpinka/voluptasodit.git/issues"
+  },
+  "homepage": "https://github.com/SadyeSpinka/voluptasodit.git",
+  "dependencies": {
+    "@types/node": "^8.5.2"
+  },
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "nyc": "^11.4.1",
+    "shelljs": "^0.7.8",
+    "standard-version": "^4.2.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  },
+  "ava": {
+    "files": [
+      "dist/**/*.spec.js"
+    ]
+  },
+  "nyc": {
+    "include": [
+      "dist/**/*.js"
+    ],
+    "exclude": [
+      "dist/**/*.spec.js"
+    ],
+    "extensions": [
+      ".ts"
+    ],
+    "sourceMap": true,
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "cache": true,
+    "all": true,
+    "check-coverage": false
+  }
+}
